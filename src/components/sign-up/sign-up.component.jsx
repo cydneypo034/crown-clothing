@@ -10,14 +10,14 @@ import './sign-up.styles.scss'
 
 
 class SignUp extends React.Component {
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
 
         this.state = {
             displayName: '',
             email: '',
             password: '',
-            corfirmPassword: ''
+            confirmPassword: ''
         }
     }
 
@@ -26,7 +26,7 @@ class SignUp extends React.Component {
 
         const {displayName, email, password, confirmPassword} = this.state;
 
-        if(password != confirmPassword) {
+        if(password !== confirmPassword) {
             alert("passwords do not match!");
             return;
         }
@@ -42,7 +42,7 @@ class SignUp extends React.Component {
             displayName: '',
             email: '',
             password: '',
-            corfirmPassword: ''
+            confirmPassword: ''
             })
         } catch (error) {
             console.error(error);
@@ -61,12 +61,12 @@ class SignUp extends React.Component {
         return(
             <div className='sign-up'>
                 <h2 className='title'>I don't have an account.</h2>
-                <span>Sign up with your email.</span>
+                <span>Sign up with your email and password.</span>
 
                 <form className='sign-up-form' onSubmit={this.handleSubmit}>
                     <FormInput
                     type='text'
-                    name='dislayName'
+                    name='displayName'
                     value={displayName}
                     onChange={this.handleChange}
                     label='Display Name'
